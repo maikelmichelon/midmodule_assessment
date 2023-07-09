@@ -1,0 +1,13 @@
+Hardware Requirements:
+
+    Processor: Any modern processor capable of running Python 3.x.
+    Memory (RAM): The memory requirements depend on the size of the graph you intend to process. Larger graphs may require more memory to store the distance matrix.
+
+Software Requirements:
+
+    Python 3.x: The code is written in Python and requires Python 3.x to run. Ensure that Python is installed on your system. You can download the latest version of Python from the official Python website: https://www.python.org/downloads/
+    Operating System: The code can run on any operating system (Windows, macOS, Linux) that supports Python 3.x.
+
+You should be able to execute the Floyd's Algorithm implementation by running the Python script or using an integrated development environment (IDE) such as VS Code, Jupyter Notebook, or PyCharm.
+
+No additional software or packages are required for the basic implementation of the Floyd's Algorithm. However, if you plan to use any additional functionalities or libraries in your project, make sure to fulfill their specific requirements as well.
