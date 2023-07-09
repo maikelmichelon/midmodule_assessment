@@ -1,4 +1,4 @@
-#unittest_forcodeusingrecursion
+#unittest_forimperativeversion
 
 import sys
 import itertools
@@ -14,30 +14,22 @@ graph = [
 MAX_LENGTH = len(graph[0])
 
 
-def floyd_recursive(distance, intermediate, start_node, end_node):
-    """
-    Recursive implementation of Floyd's algorithm
-    """
-    if start_node == end_node:
-        distance[start_node][end_node] = 0
-        return
-
-    distance[start_node][end_node] = min(
-        distance[start_node][end_node],
-        distance[start_node][intermediate] + distance[intermediate][end_node]
-    )
-
-    if intermediate < MAX_LENGTH - 1:
-        floyd_recursive(distance, intermediate + 1, start_node, end_node)
-
-
 def floyd(distance):
     """
     Implementation of Floyd's algorithm
     """
     for intermediate, start_node, end_node in itertools.product(range(MAX_LENGTH), range(MAX_LENGTH), range(MAX_LENGTH)):
-        floyd_recursive(distance, intermediate, start_node, end_node)
-
+        # Assume that if start_node and end_node are the same, then the distance is zero
+        if start_node == end_node:
+            distance[start_node][end_node] = 0
+            continue
+        
+        # Check if the intermediate vertex provides a shorter path between start_node and end_node
+        distance[start_node][end_node] = min(
+            distance[start_node][end_node],
+            distance[start_node][intermediate] + distance[intermediate][end_node]
+        )
+        
 
 class FloydTestCase(unittest.TestCase):
 

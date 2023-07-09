@@ -1,8 +1,7 @@
-#unittest_forcodeusingimperative
+#imperativeversion_floydsalgorithn
 
 import sys
 import itertools
-import unittest
 
 NO_PATH = sys.maxsize
 graph = [
@@ -12,7 +11,6 @@ graph = [
     [NO_PATH, NO_PATH, NO_PATH, 0]
 ]
 MAX_LENGTH = len(graph[0])
-
 
 def floyd(distance):
     """
@@ -31,19 +29,17 @@ def floyd(distance):
         )
         
 
-class FloydTestCase(unittest.TestCase):
-
-    def test_floyd_algorithm(self):
-        distance = [row[:] for row in graph]  # Create a copy of the original graph
-        floyd(distance)
-        expected_result = [
-            [0, 7, 12, 8],
-            [NO_PATH, 0, 5, 7],
-            [NO_PATH, NO_PATH, 0, 2],
-            [NO_PATH, NO_PATH, NO_PATH, 0]
-        ]
-        self.assertEqual(distance, expected_result)
 
 
-if __name__ == '__main__':
-    unittest.main()
+        
+    # Print the resulting distance matrix
+    for row in distance:
+        print(row)
+
+
+
+
+
+
+# Call the function with the graph
+floyd(graph)
